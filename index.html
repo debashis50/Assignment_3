@@ -13,7 +13,52 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
     <script src="https://cdn.tailwindcss.com"></script>
-
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    keyframes: {
+                        slideinLeft: {
+                            "0%": {
+                                opacity: "0",
+                                transform: "translateX(-100%)",
+                            },
+                            "50%": {
+                                opacity: "1",
+                                transform: "translateX(0)",
+                            },
+                        },
+                        slideinUp: {
+                            "0%": {
+                                opacity: "0",
+                                transform: "translateY(100%)",
+                            },
+                            "50%": {
+                                opacity: "1",
+                                transform: "translateY(0)",
+                            },
+                        },
+                        waveColorChange: {
+                               '0%': { color: '#FFDC26' },
+                               '25%': { color: '#F472B6' },
+                               '50%': { color: '#4ADE80' },
+                               '75%': { color: '#60A5FA' },
+                               '100%': { color: '#FFDC26' },
+                        },
+                      },
+                  },
+                    animation: {
+                        slideinLeft: "slideinLeft 2s ease infinite",
+                        slideinUp: "slideinUp 2s ease infinite",
+                        waveColorChange: 'waveColorChange 3s ease infinite',
+                    },
+                    fontFamily: {
+                        sora: ['Sora', 'serif'],
+                        ADLaM: ['ADLaM Display', 'serif'],
+                    },
+                }
+            }
+    </script>
 </head>
 <body>
       <nav class="bg-[#FFF9F4]">
@@ -61,3 +106,102 @@
       </div>
       </nav>
       <div class="border-b-2 border-b-black lg:hidden"></div>
+      <main class="mt-16">
+        <header class="max-w-[1440px] mx-auto relative h-[400px] lg:h-[700px]">
+            <div class="bg-[url(c1-assets/cat-big.png)] bg-contain bg-no-repeat bg-bottom h-full">
+            <div class="hero">
+                <div class="hero-content absolute lg:-left-5 lg:-top-5 -top-12">
+                  <div>
+                    <h1 class="lg:text-6xl text-3xl font-normal font-ADLaM animate-slideinLeft opacity-0 whitespace-nowrap">
+                      Pamper Your Pet, <br> Because They Deserve <br> the Best
+                    </h1>                      
+                    
+                    <p class="py-6 animate-slideinUp opacity-0">
+                      Discover a world of treats, toys, and essentials handpicked for <br> your furry friends. Shop now and make tails wag with joy!
+                  </p>                    
+                    <a class="btn bg-[#FFDC26] hover">Find a pet</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </header>
+        <section class="max-w-[1440px] mx-auto mt-16 mb-24 px-4">
+            <h1 class="text-4xl font-normal font-ADLaM text-[#111111] animate-waveColorChange">Browse By Categories</h1>
+            
+              <div class="grid grid-cols-2 lg:grid-cols-6 lg:gap-10 gap-5">
+                  <div class="card bg-base-100 lg:w-48 w-full shadow-sm mt-10 pt-10 bg-[#F9DF8A]">
+                      <div class="avatar justify-center items-center">
+                          <div class="w-32 p-8 rounded-full bg-white">
+                              <img src="c1-assets/dog-cartoon.png" />
+                          </div>
+                        </div>
+                      <div class="card-body items-center text-center">
+                        <h2 class="card-title">Dog</h2>
+                        <p>3 items</p>
+                        
+                      </div>
+                    </div>
+                  <div class="card bg-base-100 lg:w-48 w-full shadow-sm mt-10 pt-10 bg-[#F9DF8A]">
+                      <div class="avatar justify-center items-center">
+                          <div class="w-32 p-8  rounded-full bg-white">
+                              <img src="c1-assets/fish-cartoon.png" />
+                          </div>
+                        </div>
+                      <div class="card-body items-center text-center">
+                        <h2 class="card-title">Fish</h2>
+                        <p>3 items</p>
+                        
+                      </div>
+                    </div>
+                  <div class="card bg-base-100 lg:w-48 w-full shadow-sm mt-10 pt-10 bg-[#F9DF8A]">
+                      <div class="avatar justify-center items-center">
+                          <div class="w-32 p-8  rounded-full bg-white">
+                              <img src="c1-assets/cat-cartoon.png" />
+                          </div>
+                        </div>
+                      <div class="card-body items-center text-center">
+                        <h2 class="card-title">Cat</h2>
+                        <p>3 items</p>
+                        
+                      </div>
+                    </div>
+                  <div class="card bg-base-100 lg:w-48 w-full shadow-sm mt-10 pt-10 bg-[#F9DF8A]">
+                      <div class="avatar justify-center items-center">
+                          <div class="w-32 p-8 rounded-full bg-white">
+                              <img src="c1-assets/bird-cartoon.png" />
+                          </div>
+                        </div>
+                      <div class="card-body items-center text-center">
+                        <h2 class="card-title">Birds</h2>
+                        <p>3 items</p>
+                        
+                      </div>
+                    </div>
+                  <div class="card bg-base-100 lg:w-48 w-full shadow-sm mt-10 pt-10 bg-[#F9DF8A]">
+                      <div class="avatar justify-center items-center">
+                          <div class="w-32 p-8  rounded-full bg-white">
+                              <img src="c1-assets/mouse-cartoon.png" />
+                          </div>
+                        </div>
+                      <div class="card-body items-center text-center">
+                        <h2 class="card-title">Small pet</h2>
+                        <p>3 items</p>
+                        
+                      </div>
+                    </div>
+                  <div class="card bg-base-100 lg:w-48 w-full shadow-sm mt-10 pt-10 bg-[#F9DF8A]">
+                      <div class="avatar justify-center items-center">
+                          <div class="w-32 p-8  rounded-full bg-white">
+                              <img src="c1-assets/rabbit-cartoon.png" />
+                          </div>
+                        </div>
+                      <div class="card-body items-center text-center">
+                        <h2 class="card-title">Rabit</h2>
+                        <p>3 items</p>
+                        
+                      </div>
+                    </div>
+              </div>
+          </section>
+
+        
